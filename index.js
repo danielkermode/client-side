@@ -1,7 +1,7 @@
 var xhr = require('xhr')
 var greeting = require('./views/greeting.hbs')
 //console.log(xhr)
-var endpoint = 'http://localhost:3000/pens'
+var endpoint = 'https://localhost:3000/pens'
 
 // document.getElementById("getData").addEventListener('click', function(){
   xhr.get(endpoint, function (err, data) {

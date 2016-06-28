@@ -10,7 +10,7 @@
     "push": "gh-pages -d dist",
     "open": "xdg-open index.html",
     "bopen": "npm run build && npm run open",
-    "dev": "npm run build && budo index.js --live --open --serve bundle.js -- index.js -g uglifyify",
+    "dev": "budo index.js --live --open -- index.js -g uglifyify",
     "deploy": "npm run build && npm run dist && npm run push"
   },
   "keywords": [],

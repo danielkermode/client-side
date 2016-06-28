@@ -6,11 +6,9 @@ function greetingTemplate (obj) {
   var bgGreen = {'background-color': '#2f2'};
   var bgBlue = {'background-color': '#22f'};
 
-  var penlis = [];
-  obj.pens.forEach(function(pen) {
-    penlis.push('li');
-    penlis.push(pen.name);
-  })
+  var penlis = obj.pens.map(function(pen) {
+    return h('li', pen.name);
+  });
 
   var domElement =
   h('div#page',
@@ -25,6 +23,7 @@ function greetingTemplate (obj) {
       )
     ),
     h('h2', 'content title', { style: bgRed }),
+    h('ul', penlis),
     h('p',
       'so it\'s just like a templating engine,\n' +
       'but easy to use inline with javascript\n'

@@ -1,10 +1,16 @@
 var h = require('hyperscript');
 
-function greetingTemplate (person) {
-  var name = person.name;
+function greetingTemplate (obj) {
+  var name = obj.name;
   var bgRed = {'background-color': '#f22'};
   var bgGreen = {'background-color': '#2f2'};
   var bgBlue = {'background-color': '#22f'};
+
+  var penlis = [];
+  obj.pens.forEach(function(pen) {
+    penlis.push('li');
+    penlis.push(pen.name);
+  })
 
   var domElement =
   h('div#page',
@@ -20,7 +26,7 @@ function greetingTemplate (person) {
     ),
     h('h2', 'content title', { style: bgRed }),
     h('p',
-      'so it\'s just like a templating engine,\n'
+      'so it\'s just like a templating engine,\n' +
       'but easy to use inline with javascript\n'
     ),
     h('p',
